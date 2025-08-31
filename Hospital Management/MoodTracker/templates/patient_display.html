@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: url('https://i.pinimg.com/736x/1a/20/30/1a20302b1887f5bf0c085ee90084d8b7.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+  }
+
+  .table-container {
+    background-color: rgba(255, 255, 255, 0.95); /* semi-transparent */
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 12px;
+    max-width: 1200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #007BFF;
+    color: white;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="table-container">
+  <h2>Patient Records</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Weight (kg)</th>
+        <th>Height (cm)</th>
+        <th>Blood Group</th>
+        <th>Current Medications</th>
+        <th>Chronic Diseases</th>
+        <th>Previous Surgeries</th>
+        <th>Update</th>
+        <th>Delete</th>  
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in all_details %}
+      <tr>
+        <td>{{ x.PatientName }}</td>
+        <td>{{ x.date_of_birth }}</td>
+        <td>{{ x.gender }}</td>
+        <td>{{ x.weight }}</td>
+        <td>{{ x.height }}</td>
+        <td>{{ x.blood_group }}</td>
+        <td>{{ x.current_medications }}</td>
+        <td>{{ x.chronic_diseases }}</td>
+        <td>{{ x.previous_surgeries }}</td>
+       
+        <td><button><a href ="{% url "update_patient" x.id %}">update</a></button>
+        <td><button><a href ="{% url "delete_patient" x.id %}">delete</a></button> 
+      </tr>
+      
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  body {
+    background: url('https://i.pinimg.com/736x/13/72/7c/13727ce57a9d2e26e7c582dc60369b36.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  /* Table card overlay so text is readable */
+  .card {
+    background-color: rgba(145, 96, 96, 0.53);
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(6, 6, 6, 0.88);
+  }
+</style>
+
+<!-- ✅ Page Title -->
+<div class="container mt-4">
+  <h2 class="text-center mb-4 fw-bold" style="color: white;">
+    Patient Mental Health Records
+  </h2>
+
+
+  <!-- ✅ Table Section -->
+  <div class="card shadow p-4">
+    <h4 class="mb-3 fw-semibold"  style="color: white;">All Records</h4>
+    <div class="table-responsive">
+      <table class="table table-modern table-striped align-middle">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient Name</th>
+            <th>Date</th>
+            <th>Mood</th>
+            <th>Stress Level</th>
+            <th>Sleep Hours</th>
+            <th>Appetite</th>
+            <th>Energy Level</th>
+            <th>Medication Taken</th>
+            <th>Therapy Exercise</th>
+            <th>Daily Goal Achieved</th>
+            <th>Remarks</th>
+            <th>Update</th>
+            <th>Delete</th> 
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in alldetails1 %}
+          <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.PatientName }}</td>
+            <td>{{ data.Date }}</td>
+            <td>{{ data.Mood }}</td>
+            <td>{{ data.StressLevel }}</td>
+            <td>{{ data.SleepHours }}</td>
+            <td>{{ data.Appetite }}</td>
+            <td>{{ data.EnergyLevel }}</td>
+            <td>{{ data.MedicationTaken }}</td>
+            <td>{{ data.TherapyExercise }}</td>
+            <td>{{ data.DailyGoalAchieved }}</td>
+            <td>{{ data.Remarks }}</td>
+            <td><a href="{% url 'update_information' data.id %}" class="btn btn-warning btn-sm">Update</a></td>
+            <td><a href="{% url 'delete_information' data.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

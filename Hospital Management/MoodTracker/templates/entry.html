@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #f8f9fa;
+  }
+  .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .hospital-img {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+</style>
+
+<div class="container mt-5">
+  <!-- Hospital Heading -->
+  <h2 class="text-center fw-bold mb-4">🏥 Our Healthcare Facility</h2>
+
+  <!-- Hospital Image -->
+  <div class="card mb-4">
+    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3" 
+         class="hospital-img" 
+         alt="Hospital Building">
+    <div class="card-body">
+      <h5 class="card-title">Our Hospital Overview</h5>
+      <p class="card-text">
+        Our hospital is dedicated to providing top-quality mental and physical healthcare. 
+        With modern facilities and compassionate doctors, we ensure the best possible care for our patients.
+      </p>
+    </div>
+  </div>
+
+  <!-- Equipment Section -->
+  <h3 class="text-center mb-3">🛠️ Modern Equipments</h3>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/b0/b3/7d/b0b37d4b7c93f33ed9ea7f5644b7d1d3.jpg"
+             class="hospital-img" alt="MRI Machine">
+        <div class="card-body text-center">
+          <p>MRI Machine</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/ac/85/b7/ac85b78d35eebdf99ce07eb56ad5b7af.jpg"
+             class="hospital-img" alt="ICU Equipment">
+        <div class="card-body text-center">
+          <p>ICU Equipment</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/05/48/43/0548431aa1952917b563ae2b4f36b751.jpg"
+             class="hospital-img" alt="Operation Theatre">
+        <div class="card-body text-center">
+          <p>Operation Theatre</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

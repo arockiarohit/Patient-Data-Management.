@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+    }
+    {% comment %} .navbar {
+      background: #4a6fa5;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+    } {% endcomment %}
+  .hero {
+    height: 100vh;
+    background: url("https://i.pinimg.com/736x/00/63/9a/00639addfded219948c82059413e3fef.jpg") no-repeat center center;
+    background-size: cover;
+    color: #f0370eff;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: flex-start;  
+    text-align: center;
+    padding-top: 50px;        
+}
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+    footer {
+      background: #4a6fa5;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Life Care Hospital</h1>
+      <p> Where Compassion Meets Care, and Every Patient is Family. 💙.</p>
+
+      
+      <a href="{% url 'auth_page:login' %}" class="btn btn-primary">Get Started</a>
+
+
+
+    
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Mental Health Tracker | All Rights Reserved</p>
+      <p>
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

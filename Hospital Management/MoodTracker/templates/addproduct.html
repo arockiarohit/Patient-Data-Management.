@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  body {
+    background: url("https://i.pinimg.com/1200x/7b/54/a2/7b54a2f8b0eafdee79d5f7cedb849384.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+
+</style>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4 text-primary fw-bold">Daily Mental Health Record</h2>
+
+  <div class="card shadow-lg rounded-4 bg-light bg-opacity-75">
+    <div class="card-body">
+      <form action="" method="POST" class="p-3">
+        {% csrf_token %}
+        <table class="table table-bordered table-striped table-hover align-middle">
+          <tbody>
+            <tr>
+              <th class="bg-dark text-white w-25">Patient Name</th>
+              <td>{{ addproduct1.PatientName }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Date</th>
+              <td>{{ addproduct1.Date }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Mood</th>
+              <td>{{ addproduct1.Mood }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Stress Level</th>
+              <td>{{ addproduct1.StressLevel }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Sleep Hours</th>
+              <td>{{ addproduct1.SleepHours }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Appetite</th>
+              <td>{{ addproduct1.Appetite }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Energy Level</th>
+              <td>{{ addproduct1.EnergyLevel }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Medication Taken</th>
+              <td>{{ addproduct1.MedicationTaken }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Therapy Exercise</th>
+              <td>{{ addproduct1.TherapyExercise }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Daily Goal Achieved</th>
+              <td>{{ addproduct1.DailyGoalAchieved }}</td>
+            </tr>
+            <tr>
+              <th class="bg-dark text-white">Remarks</th>
+              <td>{{ addproduct1.Remarks }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success px-4 mt-3">Submit</button>
+          <button type="reset" class="btn btn-secondary px-4 mt-3">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
